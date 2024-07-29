@@ -15,6 +15,7 @@ const port = 3000;
 const recipeRouter = require('./src/modules/recipe/routes');
 const doctorRouter = require('./src/modules/doctor/routes');
 const articleRouter = require('./src/modules/article/routes');
+const userRouter = require('./src/modules/user/routes');
 
 app.use(cors({ origin: '*' })); 
 app.use(express.json());
@@ -36,6 +37,7 @@ app.post('/', (req, res) => {
 app.use('/recipe', recipeRouter);
 app.use('/article', articleRouter);
 app.use('/doctor', doctorRouter);
+app.use('/user', userRouter);
 
 app.post('/ask-bot', async (req, res) => {
     try {
